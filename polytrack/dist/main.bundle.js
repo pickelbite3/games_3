@@ -20971,6 +20971,7 @@
 						console.error(e)
 					}
 				})), d.appendChild(I_(this, C_, "f")), L_(this, k_, document.createElement("button"), "f"), I_(this, k_, "f").className = "hidden", I_(this, k_, "f").innerHTML = '<img class="button-icon" src="images/import.svg"> ', I_(this, k_, "f").append(document.createTextNode(r.get("Import"))), I_(this, k_, "f").addEventListener("click", (() => {
+					console.log(":) #1")
 					s.playUIClick();
 					const e = () => {
 							const e = I_(this, T_, "f").className;
@@ -23333,7 +23334,7 @@
 		};
 		const pC = class {
 			constructor(e, t, i) {
-				sC.add(this), aC.set(this, []), oC.set(this, []), lC.set(this, void 0), cC.set(this, void 0), uC(this, lC, i, "f"), uC(this, cC, t, "f"), Promise.all([fC(this, sC, "m", hC).call(this, "tracks/track1.track", e), fC(this, sC, "m", hC).call(this, "tracks/track2.track", e), fC(this, sC, "m", hC).call(this, "tracks/track3.track", e), fC(this, sC, "m", hC).call(this, "tracks/track4.track", e), fC(this, sC, "m", hC).call(this, "tracks/track5.track", e), fC(this, sC, "m", hC).call(this, "tracks/track6.track", e), fC(this, sC, "m", hC).call(this, "tracks/track7.track", e), fC(this, sC, "m", hC).call(this, "tracks/track8.track", e), fC(this, sC, "m", hC).call(this, "tracks/track9.track", e), fC(this, sC, "m", hC).call(this, "tracks/track10.track", e), fC(this, sC, "m", hC).call(this, "tracks/track11.track", e), fC(this, sC, "m", hC).call(this, "tracks/track12.track", e), fC(this, sC, "m", hC).call(this, "tracks/track13.track", e), fC(this, sC, "m", hC).call(this, "tracks/track13.track", e), fC(this, sC, "m", hC).call(this, "tracks/track14.track", e)]).then((e => {
+				sC.add(this), aC.set(this, []), oC.set(this, []), lC.set(this, void 0), cC.set(this, void 0), uC(this, lC, i, "f"), uC(this, cC, t, "f"), Promise.all([fC(this, sC, "m", hC).call(this, "tracks/track1.track", e), fC(this, sC, "m", hC).call(this, "tracks/track2.track", e), fC(this, sC, "m", hC).call(this, "tracks/track3.track", e), fC(this, sC, "m", hC).call(this, "tracks/track4.track", e), fC(this, sC, "m", hC).call(this, "tracks/track5.track", e), fC(this, sC, "m", hC).call(this, "tracks/track6.track", e), fC(this, sC, "m", hC).call(this, "tracks/track7.track", e), fC(this, sC, "m", hC).call(this, "tracks/track8.track", e), fC(this, sC, "m", hC).call(this, "tracks/track9.track", e), fC(this, sC, "m", hC).call(this, "tracks/track10.track", e), fC(this, sC, "m", hC).call(this, "tracks/track11.track", e), fC(this, sC, "m", hC).call(this, "tracks/track12.track", e), fC(this, sC, "m", hC).call(this, "tracks/track13.track", e), fC(this, sC, "m", hC).call(this, "tracks/track14.track", e)]).then((e => {
 					uC(this, aC, e, "f")
 				}))
 			}
