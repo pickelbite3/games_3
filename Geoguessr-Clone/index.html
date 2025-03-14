@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+</head>
+<body>
+    <h1>How to play:</h1>
+    <p>simply put any email (anything ending in @lwsd.org or @gmail.com etc.) and put any password over 6 characters, then click register.</p>
+    <a  href="dist/index.html" class="links">Continue</a>
+    <style>
+        body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(53, 53, 53);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #464646, #464646, #000000);
+    min-height: 100lvh;
+}
+
+hr {
+    width: 30vw;
+    font-size: large;
+    border: none;
+    background-color: rgb(83, 83, 83);
+    height: 1px;
+}
+
+.alert {
+    width: 90vw;
+    height: max-content;
+    background-color: rgb(209, 53, 53);
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+/* 
+.newsletter {
+    width: 90vw;
+    height: max-content;
+    background-color: rgb(37, 126, 41);
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.close-newsletter {
+    background: none;
+    border: none;
+    font-size: x-large;
+    cursor: pointer;
+    height: min-content;
+    float: right;
+    position: relative;
+    top: 2px;
+    right: 2px;
+    transition: 300ms ease;
+    border-radius: 10px;
+
+}
+
+.close-newsletter:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.joinNL {
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgba(61, 255, 78, 0.54);
+    border: 2px dashed black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 500ms ease;
+}
+
+.joinNL:hover {
+    background-color: rgba(61, 255, 78, 0.24);
+} */
+
+.close-alert {
+    background: none;
+    border: none;
+    font-size: x-large;
+    cursor: pointer;
+    height: min-content;
+    float: right;
+    position: relative;
+    top: 2px;
+    right: 2px;
+    border-radius: 10px;
+}
+
+.close-alert:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+p, li {
+    color: darkgray;
+}
+
+.title {
+    text-align: center;
+    color: darkgray;
+}
+
+.subtitle {
+    text-align: center;
+    color: darkgray;
+    margin-top: 0;
+}
+
+.count {
+    font-size: small;
+    color: rgb(149, 149, 149);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+}
+
+.links {
+    color: rgb(136, 212, 117);
+    text-decoration: none;
+    font-size: x-large;
+}
+
+.opts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search-input {
+    background: none;
+    border: none;
+    font-size: xx-large;
+    text-align: center;
+    width: 40vw;
+    color: rgb(92, 146, 79);
+}
+
+.sort-lbl {
+    margin: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: none;
+    font-size: large;
+    color: rgb(149, 149, 149);
+}
+
+.sort-btn {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: none;
+    font-size: large;
+    color: rgb(149, 149, 149);
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.sort-btn:active {
+    background-color: rgb(83, 83, 83);
+}
+
+.search-input:focus {
+    outline: none;
+}
+ 
+.gametxt {
+    text-decoration: none;
+    color: rgb(150, 172, 150);
+}
+
+.gametxtlnk {
+    text-decoration: none;
+    color: rgb(95, 197, 95);
+}
+
+.random-game {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    padding: 10px;
+    margin: 10px;
+    color: rgb(149, 149, 149);
+    background-image: linear-gradient(to bottom right, #397162, rgb(45 87 45), rgb(9 137 9));
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.random-game:hover {
+    padding: 12px;
+}
+
+.random-game:active {
+    padding: 9px;
+}
+
+.vpn-img {
+    height: 400px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.code {
+    background-color: rgb(78, 78, 78);
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.local::before {
+    content: "•";
+    color: rgb(149, 149, 149);
+}
+
+.topbar {
+    background-color: rgb(114, 114, 114);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-link {
+    background: rgb(83, 83, 83);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 3px;
+    margin: 5px;
+    color: rgb(195, 195, 195);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
+}
+    </style>
+</body>
+</html>

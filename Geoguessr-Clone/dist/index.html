@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Geoguessr Clone</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image" href="icons/map-marker.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!-- Top Navbar -->
+        <div id="navContainer">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="topNav">
+                <a class="navbar-brand" href="#" id="projectTitle">
+                    <img src="icons/map-marker.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Geoguessr Clone
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="navbar-nav" id="navbar-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#leaderboard" id="leaderboardLink">Leaderboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about" id="aboutLink">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="signOutLink">Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Firebase Auth -->
+        <form id="sign-in-form">
+            <div id="authContainer" class="rounded">
+                
+                <h1>Sign in with Firebase</h1>
+                <div class="form-outline">
+                    <input type="text" class="form-control" id="email" name="auth" placeholder="Email">
+                </div>
+                <div class="form-outline">
+                    <input type="text" class="form-control" id="password" name="auth" placeholder="Password (at least 6 characters)">
+                </div>
+                <input type="hidden" id="submit-type" name="submit-type">
+                <div class="form-outline">
+                    <button type="submit" class="btn btn-success form-control" id="sign-in-button">Sign in</button>
+                </div>
+                <div class="form-outline">
+                    <button type="submit" class="btn btn-success form-control" id="register-button">Register an account</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Game mode selection -->
+        <form id="game-mode-form" class="rounded">
+            <h1>Select game mode</h1>
+            <div>
+                <input type="hidden" id="mode-type" name="mode-type">
+
+                <h2 class="text-center">Solo</h2>
+                <div id="solo-difficulty" class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg mr-2" id="normal-diff">Normal</button>
+                    <button type="submit" class="btn btn-warning btn-lg mr-2" id="hard-diff">Hard</button>
+                    <button type="submit" class="btn btn-danger btn-lg" id="expert-diff">Expert</button>
+                </div>
+            </div>
+            
+        </form>
+
+        <!-- Google Map and Panoramic view -->
+        <div id="game-container">
+            <div id="map"></div>
+            <div id="pano">
+                <div id="timer">
+                    <p id="time-remaining"></p>
+                </div>
+                <div id="score-overlay">
+                    <p id="round-score"></p>
+                    <p id="distance"></p>
+                    <button type="button" class="btn btn-success btnl-lg mr-2" id="play-again">Play Again</button>
+                </div>
+            </div>
+            <button class="btn btn-success" id="guess-button">Make Guess</button>
+        </div>
+
+        <!-- Leaderboard -->
+        <div id="leaderboardSection">
+            <div id="leaderboardTitle" class="leaderboardText">
+                <h1>Leaderboard</h1>
+                <h2 class="text-center">Solo</h2>
+            </div>
+            <div id="leaderboardContainer">
+                <div class="leaderboard" id="topScoresLeaderboard">
+                    <h2 class="leaderboardText">Top Scores</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Top Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="leaderboard" id="accumulatedScoresLeaderboard">
+                    <h2 class="leaderboardText">Accumulated Scores</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Accumulated Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="aboutSection">
+            <div id="aboutTitle">
+                <h1>About This Project</h1>
+            </div>
+            <div id="aboutBody">
+                <p>
+                    Welcome to our <a href="https://www.geoguessr.com/" target="_blank">Geoguessr</a>-inspired project!
+                    We are not affiliated with the official game, but our project aims to recreate the experience
+                    players have while playing Geoguessr, a popular and intriguing geography guessing web game.
+                </p>
+                <p>
+                    Test and train your knowledge of geography as you are placed in random locations from all around the world!
+                    Leveraging Google's extensive collection of street view imagery, including externally contributed images,
+                    and with the help of our random location generator, we've created an experience that puts players' geography skills to the test.
+                    You may find yourself placed in some familiar locations or perhaps you may end up in some foreign, unrecognizable places.
+                    You should use any context clues you may find in order to make the most educated guess possible. It is a challenging game, but it allows you to
+                    improve your skills with each game!
+                </p>
+                <h2 class="text-center">
+                    How to Play
+                </h2>
+                <p>
+                    Once you've registered an account or have signed in to an existing account, you can choose from three difficulty levels:
+                    <b><span style="color:lightgreen">Normal</span>, <span style="color:yellow">Hard</span> or <span style="color:red">Expert</span></b>.
+                    Each game is 5 rounds long with a new location generated for each round.
+                    Increasing the difficulty level reduces the time you have to guess your location during each round. Here are the guessing times below:
+                    <h4>
+                        Guessing Times
+                    </h4>
+                    <ul>
+                        <li><b><span style="color:lightgreen">Normal</span></b> : 2 minutes. </li>
+                        <li><b><span style="color:yellow">Hard</span></b> : 1 minute. </li>
+                        <li><b><span style="color:red">Expert</span></b> : 30 seconds. </li>
+                    </ul>
+                </p>
+                <p>
+                    Once the street view image has loaded, your guessing time begins and a timer at the top of the screen displays how much time is left.
+                    Some locations generated are interactive and you may move around by clicking or tapping on the screen in the desired direction.
+                    Other locations may not allow the option to move around. Be aware that the generated location does not move with you, so if you've found the location,
+                    you should try to place your guess at the initial location you were placed.
+                </p>
+                <p>
+                    To make a guess, simply click a location on the map located in the bottom right hand corner and then press the button that says 'Make Guess'.
+                    Your guess is denoted by the marker with this icon: <img src="icons/map-marker.png" width="30" height="30" class="d-inline-block align-top" alt="">.
+                    Once you've guessed, you'll be given a score reflecting the closeness of your guess to the actual location.
+                    The max score achievable per round is 5000. Therefore, the maximum score possible for a game is 25000.
+                    Once you've finished all 5 rounds, your score will be uploaded to our leaderboard where all users can see.
+                    To view the leaderboard, you must be signed in. You can click the link at the top of your screen, titled 'Leaderboard', or you may use the dropdown menu to find the link.
+                    Good luck, and have fun!
+                </p>
+                <p>Icons from <a href="http://icons8.com/icons">Icons8</a></p>
+            </div>
+        </div>
+        
+        <script src="main.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_UQT0nGeyyH6FeLdp9DhdjlfJfOK2m28&callback=initialize&v=weekly"
+            defer>
+        </script>
+        
+    </body>
+</html>

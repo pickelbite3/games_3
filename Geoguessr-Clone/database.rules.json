@@ -1,0 +1,21 @@
+{
+  "rules": {
+     "leaderboard": {
+      ".read": "auth !== null",
+      "$uid": {
+        "email": {
+          ".write": "auth.uid === $uid",
+          ".validate": "newData.isString()"
+        },
+        "topScore": {
+          ".write": "auth.uid === $uid",
+          ".validate": "newData.isNumber()"
+        },
+        "accumulatedScore": {
+          ".write": "auth.uid === $uid",
+          ".validate": "newData.isNumber()"
+        }
+      }
+    }
+  }
+}

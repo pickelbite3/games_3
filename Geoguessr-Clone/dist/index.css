@@ -1,0 +1,210 @@
+#projectTitle {
+    padding-left: 5vw;
+}
+
+#navContainer {
+    z-index: 3;
+    width: 100vw;
+    height: 56px;
+    position: fixed;
+    
+}
+
+#navbar-items {
+    margin-left: 2vw;
+}
+
+#signOutLink {
+    display: none;
+
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    background-color: rgba(190, 189, 189, 1);
+}
+
+#authContainer {
+    flex-direction: column;
+    row-gap: 5vh;
+    position: relative;
+    top: 15vh;
+    height: 75vh;
+    width: 70vw;
+    background-color: rgba(217, 217, 217, 1);
+    margin: auto;
+}
+
+#authContainer > h1 {
+    padding: 5vw;
+}
+
+#authContainer > div {
+    
+    padding: 3vh;
+}
+
+#game-mode-form {
+    display: none;
+    flex-direction: column;
+    row-gap: 5vh;
+    position: relative;
+    top: 15vh;
+    height: 75vh;
+    width: 70vw;
+    background-color: rgba(217, 217, 217, 1);
+    margin: auto;
+}
+
+#game-mode-form > h1 {
+    padding: 5vh;
+}
+
+#solo-difficulty, #multiplayer-modes {
+    padding: 5vh;
+}
+
+#pano {
+    display: none;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    justify-content: center;
+}
+
+#map {
+    display: none;
+    height: 30vh;
+    width: 40vw;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 60px;
+    border: solid green;
+    border-radius: 40px;
+}
+
+#guess-button {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    right: 90px;
+    bottom: 35vh;
+}
+
+#timer {
+    display: none;
+    position: relative;
+    width: 200px;
+    height: 7vh;
+    line-height: 6vh;
+    top: 10vh;
+    z-index: 3;
+    border-radius: 40px;
+    text-align: center;
+    font-weight: bold;
+    justify-content: center;
+    border: dotted black;
+    background-color: rgba(104, 104, 104, 0.5);
+}
+
+#time-remaining {
+    color: white;
+    font-size: 2rem;
+}
+
+#score-overlay {
+    display: none;
+    flex-direction: column;
+    row-gap: 5vh;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    padding: 3vw;
+    height: 75vh;
+    width: 70vw;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 3;
+    background-color: rgba(217, 217, 217, 0.9);
+    margin: auto;
+    border-radius: 40px;
+}
+
+#play-again {
+    display: none;
+    margin: auto;
+    margin-top: 40vh;
+    padding: 2rem;
+}
+
+#leaderboardSection {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(76, 112, 154, 1);
+}
+
+#leaderboardTitle {
+    padding: 5vw;
+    width: 100vw;
+    height: 10vh;
+    margin-bottom: 5vw;
+}
+
+.leaderboardText {
+    color: white;
+}
+
+#leaderboardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #leaderboardContainer {
+        flex-direction: column;
+    }
+}
+
+#topScoresLeaderboard, #accumulatedScoresLeaderboard {
+    padding: 5vw;
+}
+
+#aboutSection {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(76, 112, 154, 1);
+}
+
+#aboutTitle {
+    padding-top: 8vh;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+p > a {
+    color: lightgreen;
+}
+
+#aboutBody {
+    padding: 3vw;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgba(76, 112, 154, 1);
+    
+}
