@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn to fly 2</title>
+</head>
+<body>
+    <div id="container" class="main">
+
+    </div>
+
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            player.id = 'player'
+            const container = document.getElementById("container");
+            container.appendChild(player);
+            player.ruffle().load("learn-to-fly-2.swf");
+        });
+    </script>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+    <style>
+        .main {
+            height: 100dvh;
+            width: 100dvw;
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        #player {
+            height: 100dvh;
+            width: 100dvw;
+        }
+    </style>
+</body>
+</html>
